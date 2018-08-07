@@ -110,24 +110,23 @@ void displayFull()
 
 int main()
 {
-	int n, data, x;
-	char choice;
+	int n, data, x, choice;
 	printf("Enter size of linked-list : ");
 	scanf("%d",&n);
 	createList(n);
 
 	while(1)
 	{
-		printf("\n\n\tM  E  N  U\na. Delete the node at the beginning\nb. Delete the node after a specific value\nc. Display the linked-list : ");
-		scanf("%c",&choice);
+		printf("\n\n\tM  E  N  U\n1. Delete the node at the beginning\n2. Delete the node after a specific value\n3. Display the linked-list : ");
+		scanf("%d",&choice);
 		switch(choice)
 		{
-			case 'a' :
+			case 1 :
 			printf("\tDeleted data(%d) in the beginning!!\n",s->data);
 			deleteAtBeginning();
 			break;
 
-			case 'b' :
+			case 2 :
 			printf("\tEnter a number of the list : ");
 			scanf("%d",&x);
 			if(deleteInMid(x))
@@ -136,7 +135,7 @@ int main()
 				printf("\t%d not found in the list\n",x);
 			break;
 
-			case 'c' :
+			case 3 :
 			displayFull();
 			break;
 
